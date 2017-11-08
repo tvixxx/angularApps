@@ -1,0 +1,33 @@
+<article class="article" id="{{item.id}}">
+    <div class="article__preview">
+        <img [src]="item.img_src" alt="{{item.name}}" class="article__preview-img">
+        <div class="article__open-article" (click)="goToAbout(item.id)">
+            <span class="article__open-article-text">Open</span>
+        </div>
+    </div>
+    <div class="article__body">
+        <div *ngIf="editing" class="article__input-wrapper">
+            <input type="text"
+                class="article__input-name"
+                [value]="item.name"
+                (input)="inputHandler($event.target.value)"
+                placeholder="enter the new value"
+            >
+        </div>
+        <h2 class="article__title">{{item.name}}</h2>
+        <p class="article__description" appExpandDescription [styles]="styles">
+            {{item.description}}
+        </p>
+    </div>
+    <div class="article__btns">
+        <div class="article__edit-title">
+            <button class="article__edit-title-btn btn-article" (click)="editHandler()">{{ editing ? 'Done' : 'Edit'}}
+            </button>
+        </div>
+        <div class="article__remove-article">
+            <button class="article__remove-article-btn btn-article" (click)="removeHandler()">Remove current article
+            </button>
+        </div>
+    </div>
+</article>
+

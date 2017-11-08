@@ -1,0 +1,17 @@
+<div class="search">
+    <fieldset class="search__fieldset">
+        <label class="search__label">Enter the name of article:</label>
+        <input [(ngModel)]="search"
+               (input)="changeQueryByInput($event)"
+               class="search__input"
+               type="text">
+    </fieldset>
+
+    <ul class="search__badge-list">
+        <li *ngFor="let badge of badgeTypes; let idx = index"
+            (click)="changeByBadgeName(badgeTypes[idx])"
+            class="search__badge-item badge">
+            {{ badge }}
+        </li>
+    </ul>
+</div>

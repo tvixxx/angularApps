@@ -1,0 +1,32 @@
+.notification {
+    position: fixed;
+    box-sizing: border-box;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    padding: 20px;
+    min-width: 300px;
+    min-height: 80px;
+    border: 1px solid grey;
+    text-align: center;
+    color: #0a0522;
+    background-color: #fff;
+    box-shadow: 0 25px 45px 0 rgba(0, 0, 0, 0.16);
+    border-radius: 3px;
+}
+
+.notification--error {
+    color: #B21200;
+    border: 1px solid #B21200;
+}
+
+.notification--success {
+    color: #00ba51;
+    border: 1px solid #00ba51;
+}
+
+.notification__description {
+    font-size: 14px;
+    color: inherit;
+}

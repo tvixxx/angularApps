@@ -1,0 +1,23 @@
+.about-page {
+    display: block;
+    box-sizing: border-box;
+    padding: 0 40px;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 300;
+    color: #0a0522;
+}
+
+.about-page h1 {
+    font-size: 24px;
+    line-height: 36px;
+}
+
+.about-page h3 {
+    font-size: 20px;
+    opacity: .9;
+}
+
+.about-page ul li {
+    opacity: .8;
+}

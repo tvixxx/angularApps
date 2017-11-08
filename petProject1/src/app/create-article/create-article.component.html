@@ -1,0 +1,87 @@
+<div class="create-article">
+    <form class="create-article__form"
+        [formGroup]="createForm"
+        (ngSubmit)="submit(createForm.value)"
+        [ngClass]="{
+            'valid-form': createForm.valid && createForm.touched,
+            'invalid-form': createForm.invalid && createForm.touched
+        }">
+        <p class="create-article__additional-text">
+            Please enter the data for the new article!
+        </p>
+
+        <fieldset class="create-article__fieldset">
+            <label for="article-name" class="create-article__label">Name:</label>
+            <input tabindex="1"
+                formControlName="name"
+                [(ngModel)]="newArticle.name"
+                [ngClass]="{
+                    'valid-input': name.valid && name.touched,
+                    'invalid-input': name.invalid && name.touched
+                }"
+                type="text"
+                class="create-article__input"
+                placeholder="Name"
+                id="article-name">
+            <p class="create-article__error-text"
+                *ngIf="name.invalid && name.touched"
+            >
+                The field invalid.
+            </p>
+        </fieldset>
+
+        <fieldset class="create-article__fieldset">
+            <label for="img-url" class="create-article__label">Image url address:</label>
+            <input tabindex="2"
+                formControlName="src"
+                [(ngModel)]="newArticle.img_src"
+                [ngClass]="{
+                    'valid-input': src.valid && src.touched,
+                    'invalid-input': src.invalid && src.touched
+                }"
+                type="text"
+                class="create-article__input"
+                placeholder="Image url"
+                id="img-url">
+            <p class="create-article__error-text"
+               *ngIf="src.invalid && src.touched">
+                The field invalid.
+            </p>
+        </fieldset>
+
+        <fieldset class="create-article__fieldset">
+            <label for="article-description" class="create-article__label">Description:</label>
+            <textarea tabindex="3"
+                formControlName="description"
+                [(ngModel)]="newArticle.description"
+                [ngClass]="{
+                    'valid-input': description.valid && description.touched,
+                    'invalid-input': description.invalid && description.touched
+                }"
+                class="create-article__textarea"
+                placeholder="Description"
+                id="article-description">
+            </textarea>
+            <p class="create-article__error-text"
+               *ngIf="description.invalid && description.touched">
+                The field invalid.
+            </p>
+        </fieldset>
+
+        <fieldset class="create-article__fieldset">
+            <button [disabled]="createForm.invalid"
+                tabindex="4"
+                class="create-article__button"
+                [ngClass]="{
+                    'valid-input': createForm.valid,
+                    'invalid-input': createForm.invalid,
+                    'disabled': createForm.invalid
+                }"
+            >
+                Create
+            </button>
+        </fieldset>
+    </form>
+
+    <button class="common-btn" (click)="goHomePage()">Go to Home page</button>
+</div>

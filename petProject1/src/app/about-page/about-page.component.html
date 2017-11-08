@@ -1,0 +1,9 @@
+<div class="about-page">
+    <h1>{{aboutInfo.mainTitle}}</h1>
+    <h3>{{aboutInfo.subTitle}}</h3>
+    <ul>
+        <li *ngFor="let technology of aboutInfo.technologies">
+            {{ technology }}
+        </li>
+    </ul>
+</div>

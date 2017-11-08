@@ -1,0 +1,17 @@
+<div class="home">
+    <app-search
+        (changeQuery)="changeSearchQuery($event)"
+        (changeQueryByBadge)="changeSearchQueryByBadge($event)"
+        [search]="query">
+    </app-search>
+
+    <ul class="home__list-of-articles">
+        <app-article
+            *ngFor="let item of articles | articleName:query"
+            [item]="item"
+            [styles]="styles"
+            (changedTitle)="titleHandler($event)"
+            (removeArticle)="removeArticleHandler($event)">
+        </app-article>
+    </ul>
+</div>

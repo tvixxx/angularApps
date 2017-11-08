@@ -1,0 +1,46 @@
+.about-article-section {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+}
+
+.about-article {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 600px;
+    width: 100%;
+}
+
+.about-article__img {
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    align-self: center;
+}
+
+.about-article__title {
+    box-sizing: border-box;
+    font-size: 24px;
+    line-height: 36px;
+    font-weight: 500;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.about-article__description {
+    width: 100%;
+    margin-left: 0;
+    margin-right: auto;
+    font-size: 18px;
+    line-height: 32px;
+    font-weight: 300;
+}
+
+.about-article__button {
+    margin-top: 40px;
+}

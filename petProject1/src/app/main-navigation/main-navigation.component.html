@@ -1,0 +1,22 @@
+<header class="header">
+    <nav class="header__nav">
+        <ul class="header__nav-list">
+            <li class="header__nav-item">
+                <a routerLink="/" [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active"
+                   class="header__nav-link">Home</a>
+            </li>
+            <li class="header__nav-item">
+                <a routerLink="/create-article" routerLinkActive="active" class="header__nav-link">Create Article</a>
+            </li>
+            <li class="header__nav-item">
+                <a routerLink="/about-page" routerLinkActive="active" class="header__nav-link">About</a>
+            </li>
+            <li class="header__nav-item">
+                <a href="#" class="header__nav-link" (click)="becomeAdmin($event)">Become an Administrator</a>
+            </li>
+            <li class="header__nav-item">
+                <a href="#" class="header__nav-link" (click)="becomeUser($event)">Become an User</a>
+            </li>
+        </ul>
+    </nav>
+</header>

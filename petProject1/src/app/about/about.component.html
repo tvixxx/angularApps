@@ -1,0 +1,11 @@
+<section class="about-article-section">
+    <div class="about-article">
+        <img class="about-article__img" [src]="currentArticle.img_src" [alt]="currentArticle.name">
+        <h1 class="about-article__title">{{currentArticle.name}}</h1>
+        <p class="about-article__description">
+            {{currentArticle.description}}
+        </p>
+    </div>
+
+    <button class="about-article__button common-btn" (click)="goHomePage()">Home page</button>
+</section>

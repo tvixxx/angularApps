@@ -1,0 +1,58 @@
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  font: 300 15px/1.4 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+}
+
+.common-btn {
+  box-sizing: border-box;
+  width: auto;
+  color: #333;
+  padding: 3px;
+  font-size: 16px;
+  line-height: 24px;
+  background-color: transparent;
+  outline: 0;
+  border: 0;
+  opacity: 1;
+  border-bottom: 1px solid #0a0522;
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+}
+
+.common-btn:hover {
+  opacity: 0.7;
+  border-bottom: 1px solid transparent;
+}
+
+.common-btn:active {
+  opacity: 0.5;
+  border-bottom: 1px solid transparent;
+}
+
+.badge {
+  box-sizing: border-box;
+  width: auto;
+  padding: 4px 6px;
+  border-radius: 4px;
+  background-color: #58cd78;
+  color: #fff;
+  font-size: 13px;
+  line-height: 16px;
+  text-align: center;
+  opacity: 1;
+  transition: all .2s ease-in-out;
+  cursor: pointer;
+  border: 1px solid #36cd2a;
+}
+
+.badge:hover {
+  opacity: 0.8;
+  background-color: #40af40;
+  border: 1px solid #40af40;
+}
+
+.badge:active {
+  opacity: 0.7;
+}
