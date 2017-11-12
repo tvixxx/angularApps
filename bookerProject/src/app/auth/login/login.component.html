@@ -1,0 +1,71 @@
+<p class="text-xs-center">Войдите для работы</p>
+<div
+  *ngIf="message.text"
+  class="alert alert-{{message.type}}">
+  {{ message.text }}
+</div>
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit($event)">
+  <div
+      [ngClass]="{'has-error': email.invalid && email.touched}"
+      class="form-group">
+    <label for="email">Email</label>
+    <input
+      type="text"
+      class="form-control underlined"
+      id="email"
+      placeholder="Введите ваш email"
+      formControlName="email"
+    >
+    <div *ngIf=" email.invalid && email.touched">
+      <div
+        class="form-help-text"
+        *ngIf="email.errors.required">
+          Email не может быть пустым
+      </div>
+      <div
+        class="form-help-text"
+        *ngIf="email.errors.email">
+        Введите корректный Email
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group"
+       [ngClass]="{'has-error': password?.invalid && password.touched}">
+    <label for="password">Пароль</label>
+    <input
+      type="password"
+      class="form-control underlined"
+      id="password"
+      placeholder="Пароль"
+      formControlName="password"
+    >
+    <div *ngIf="password.invalid && password.touched">
+      <div
+        class="form-help-text"
+        *ngIf="password.errors.required">
+        Пароль не может быть пустым
+      </div>
+      <div
+        class="form-help-text"
+        *ngIf="password.errors.minlength">
+        Пароль не может быть короче
+        {{ requiredPasswordLength }}-ти символов,
+        сейчас введено {{actualPasswordLength}}
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <button
+      type="submit"
+      class="btn btn-block btn-primary"
+      [disabled]="loginForm.invalid">
+      Войти
+    </button>
+  </div>
+  <div class="form-group">
+    <p class="text-muted text-xs-center">
+      Нет аккаунта? <a [routerLink]="'/registration'">Зарегистрироваться!</a>
+    </p>
+  </div>
+</form>
