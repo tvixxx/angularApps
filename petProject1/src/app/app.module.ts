@@ -25,6 +25,7 @@ import {SearchArticlePipe} from './shared/search-article.pipe';
 import {ArticleService} from "./shared/article.service";
 import {NotificationModule} from "./notification/notification.module";
 import {NotificationService} from "./notification/notification.service";
+import {NotFoundComponent} from "./not-found/not-found.component";
 
 @NgModule({
     declarations: [
@@ -38,7 +39,8 @@ import {NotificationService} from "./notification/notification.service";
         MainNavigationComponent,
         PhonePipe,
         AboutPageComponent,
-        SearchArticlePipe
+        SearchArticlePipe,
+        NotFoundComponent
     ],
     imports: [
         BrowserModule,
