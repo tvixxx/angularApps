@@ -6,11 +6,14 @@ import {UserService} from "../../shared/services/users.service";
 import {AuthService} from "../../shared/services/auth.service";
 import {User} from "../../shared/models/user.model";
 import {Message} from "../../shared/models/message.model";
+import {fadeStateTrigger} from "../../shared/animations/fade.animation";
+import {Title, Meta} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
+  animations: [fadeStateTrigger]
 })
 export class LoginComponent implements OnInit {
 
@@ -21,16 +24,31 @@ export class LoginComponent implements OnInit {
     private userService: UserService,
     private authService: AuthService,
     private router: Router,
-    private route: ActivatedRoute
-  ) { }
+    private route: ActivatedRoute,
+    private title: Title,
+    private meta: Meta
+  ) {
+
+  }
 
   ngOnInit() {
+    if (this.title.getTitle() !== 'Вход в систему') {
+      console.log('not equal');
+      this.title.setTitle('Вход в систему');
+      this.meta.addTags([
+        { name: 'keywords', content: 'Логин'},
+        { name: 'description', content: 'Страница для входа в систему'}
+      ]);
+    }
+
     this.message = new Message('danger', '');
 
     this.route.queryParams
       .subscribe( (params: Params) => {
         if (params['nowCanLoggin']) {
           this.showMessage({type: 'success', text: 'Теперь вы можете войти'});
+        } else if (params['accessDenied']) {
+          this.showMessage({type: 'warning', text: 'Вам необходимо войти в систему!'});
         }
       });
 

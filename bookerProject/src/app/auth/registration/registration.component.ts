@@ -5,6 +5,7 @@ import {Router} from "@angular/router";
 import {UserService} from "../../shared/services/users.service";
 import {AuthService} from "../../shared/services/auth.service";
 import {User} from "../../shared/models/user.model";
+import {Title, Meta} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-registration',
@@ -18,10 +19,21 @@ export class RegistrationComponent implements OnInit {
   constructor(
     private userService: UserService,
     private authService: AuthService,
-    private router: Router
-  ) { }
+    private router: Router,
+    private title: Title,
+    private meta: Meta
+  ) {
+  }
 
   ngOnInit() {
+    if (this.title.getTitle() !== 'Регистрация') {
+      this.title.setTitle('Регистрация');
+      this.meta.addTags([
+        { name: 'keywords', content: 'Регистрация'},
+        { name: 'description', content: 'Страница для регистрации'}
+      ]);
+    }
+
     this.regForm = new FormGroup({
       'email': new FormControl(null, [
         Validators.required,
@@ -39,7 +51,7 @@ export class RegistrationComponent implements OnInit {
       'agree': new FormControl(false, [
         Validators.requiredTrue
       ]),
-    })
+    });
   }
 
   get email() {

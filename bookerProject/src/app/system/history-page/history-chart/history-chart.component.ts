@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 
 @Component({
   selector: 'app-history-chart',
@@ -7,7 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HistoryChartComponent implements OnInit {
 
-  constructor() { }
+  view: any[] = [545, 355];
+
+  @Input() data;
+
+  constructor() {
+  }
 
   ngOnInit() {
   }
