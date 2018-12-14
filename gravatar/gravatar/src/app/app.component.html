@@ -1,0 +1,29 @@
+<div class="gravatar">
+  <div class="gravatar__image-wrapper">
+    <img
+      class="gravatar__image"
+      src="http://placehold.it/80x80"
+      appGravatar
+      [width]="size"
+      [height]="size"
+      [email]="email"
+      [size]="size"
+      (isImageLoaded)="loadImageHandler($event)"
+    />
+    <div *ngIf="!isImageLoaded" class="gravatar__image-loader">
+      <loader-component></loader-component>
+    </div>
+  </div>
+
+  <input
+    type="text"
+    class="gravatar__input"
+    placeholder="Email"
+    [(ngModel)]="email"
+  />
+  <input
+    type="text"
+    class="gravatar__input"
+    placeholder="Size"
+    [(ngModel)]="size"/>
+</div>
